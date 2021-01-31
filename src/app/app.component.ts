@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CaffeineMeter';
+  loggedIn = false;
+  userName: string;
+
+  logout() {
+
+  }
+
 }
