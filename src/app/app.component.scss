@@ -1,5 +1,5 @@
-.spacer {
-  flex: 1 1 auto;
+mat-drawer {
+  width: 18rem;
 }
 
 mat-toolbar {
@@ -7,4 +7,17 @@ mat-toolbar {
   position: -webkit-sticky; /* For macOS/iOS Safari */
   top: 0; /* Sets the sticky toolbar to be on top */
   z-index: 10000;
+}
+
+.nav-icon {
+  list-style: none;
+  padding-left: 0;
+  font-size: medium;
+  li {
+    margin-bottom: 1rem;
+  }
+  mat-icon {
+    vertical-align: bottom;
+    margin-right: 1rem;
+ }
 }

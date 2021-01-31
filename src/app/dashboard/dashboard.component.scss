@@ -1,11 +1,44 @@
-full-calendar {
-  padding: 1rem;
-}
-
 mat-card {
   margin: 1rem;
 }
 
 .list-of-data {
   padding: 1rem;
+}
+
+.date {
+  font-size: large;
+}
+
+.dateCaffeine {
+  color: rgb(184, 184, 184);
+}
+
+#gauge {
+  height: 150px;
+}
+
+mwl-gauge {
+  position: absolute;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: (-150px / 2);
+}
+mwl-gauge > .gauge > .dial {
+  stroke: #eee;
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value {
+  stroke: rgb(47, 227, 255);
+  stroke-width: 2;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value-text {
+  fill: rgb(47, 227, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
 }

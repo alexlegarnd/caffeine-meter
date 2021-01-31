@@ -1,16 +1,23 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<div id="gauge">
+  <mwl-gauge [max]="getMaxCaffeine()"
+  [value]="currentCaffeine"
+  [animated]="true"
+  [label]="generateLabel"
+  [animationDuration]="1"></mwl-gauge>
+</div>
+
 <div class="list-of-data">
   <div *ngFor="let d of summary">
-    <h2>{{ d.date | date }}</h2>
+    <div class="date"><strong>{{ d.date | date }} </strong><span class="dateCaffeine">({{ getCaffeineByDay(d.date) }} g)</span></div>
     <div *ngFor="let i of d.items">
       <mat-card>
         <mat-card-header>
           <mat-card-title>{{ i.drink.name }}</mat-card-title>
-          <mat-card-subtitle>{{ i.drink.size.value }} {{ getUnitString(i.drink.size.unit) }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ getSizeUnit(i.drink.size) }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <p>
-            Contain <b>{{ i.drink.caffeine.value }} {{ getUnitString(i.drink.caffeine.unit) }}</b> of caffeine
+            Contain <b>{{ getCaffeineUnitString(i.drink.caffeine) }}</b> of caffeine
           </p>
         </mat-card-content>
       </mat-card>

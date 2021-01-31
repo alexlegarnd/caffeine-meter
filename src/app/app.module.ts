@@ -11,12 +11,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 // Other
 import {FullCalendarModule} from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
-import {MatCardModule} from '@angular/material/card'; // a plugin
+import {MatCardModule} from '@angular/material/card';
+import { CalendarComponent } from './calendar/calendar.component'; // a plugin
+import { GaugeModule } from 'angular-gauge';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -26,9 +29,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    CalendarComponent
   ],
   imports: [
+    GaugeModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -37,7 +42,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatToolbarModule,
     MatButtonModule,
     FullCalendarModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

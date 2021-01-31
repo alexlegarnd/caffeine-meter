@@ -1,13 +1,26 @@
-<mat-toolbar color="primary">
-  <span>CaffeineMeter</span>
-  <span class="spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-</mat-toolbar>
-<mat-menu #menu="matMenu">
-  <span mat-menu-item *ngIf="loggedIn">Welcome {{ (userName) ? userName : "anonymous" }}!</span>
-  <button mat-menu-item (click)="logout()" *ngIf="loggedIn">Logout</button>
-  <button mat-menu-item (click)="logout()" *ngIf="!loggedIn">Login</button>
-</mat-menu>
-<router-outlet></router-outlet>
+<mat-drawer-container style="height: 100%;">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>CaffeineMeter</span>
+  </mat-toolbar>
+  <mat-drawer #drawer mode="over">
+    <div style="margin: 1rem;">
+      <h2 *ngIf='!loggedIn'>You are not logged</h2>
+      <h2 *ngIf='loggedIn'>Welcome {{ userName }}!</h2>
+      <hr style="border-style: solid;" />
+      <ul class="nav-icon">
+        <li routerLink='dashboard' (click)="drawer.toggle()"><mat-icon>home</mat-icon>Dashboard</li>
+        <li routerLink='calendar' (click)="drawer.toggle()"><mat-icon>event</mat-icon>Calendar</li>
+        <li><mat-icon>coffee</mat-icon>Drinks</li>
+      </ul>
+      <hr style="border-style: solid;" />
+      <span *ngIf='!loggedIn'>Log In</span>
+      <span *ngIf='loggedIn'>Log Out</span>
+    </div>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
+
+

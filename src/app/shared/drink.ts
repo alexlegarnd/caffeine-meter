@@ -1,8 +1,8 @@
-import {CaffeineUnit} from './caffeine-unit';
+import {CaffeineUnit, UnitCouple} from './caffeine-unit';
 
 export class Drink {
   id: number;
   name: string;
-  size: CaffeineUnit;
+  size: UnitCouple;
   caffeine: CaffeineUnit;
 }
