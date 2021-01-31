@@ -20,6 +20,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import {MatCardModule} from '@angular/material/card';
 import { CalendarComponent } from './calendar/calendar.component'; // a plugin
 import { GaugeModule } from 'angular-gauge';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -30,7 +32,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   declarations: [
     AppComponent,
     DashboardComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     GaugeModule.forRoot(),
